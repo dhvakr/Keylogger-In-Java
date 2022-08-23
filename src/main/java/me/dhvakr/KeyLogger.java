@@ -17,7 +17,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author vakho
+ * Program to run the keylogger application with NativeHook library
+ *
+ * @author dhvakr
  */
 public class KeyLogger implements NativeKeyListener {
 
